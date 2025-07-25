@@ -42,7 +42,7 @@ export default function RecommendationsPage() {
 
   return (
     <div className="max-w-3xl mx-auto py-10 px-8 text-center">
-      <h1 className="text-3xl font-bold mb-6 text-[#7c4f2c]">What’s your mood today?</h1>
+      <h1 className="text-3xl font-bold mb-6 text-[#7c4f2c]">What your mood says today?</h1>
 
       <div className="flex flex-wrap justify-center gap-x-9 gap-y-6 mb-10">
 
