@@ -15,7 +15,7 @@ model Genre {
 
 model Book {
   id          String  @id @default(cuid())
-  title       String
+  title       String @unique 
   author      String
   description String
   coverUrl    String?
