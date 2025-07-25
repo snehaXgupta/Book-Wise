@@ -28,7 +28,7 @@ model Book {
 
 model Quote {
   id     String @id @default(cuid())
-  text   String
+  text   String @unique
   author String
   bookId String
   book   Book   @relation(fields: [bookId], references: [id])
