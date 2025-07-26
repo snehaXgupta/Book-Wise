@@ -15,7 +15,7 @@ model Genre {
 
 model Book {
   id          String  @id @default(cuid())
-  title       String
+  title       String @unique 
   author      String
   description String
   coverUrl    String?
@@ -28,14 +28,14 @@ model Book {
 
 model Quote {
   id     String @id @default(cuid())
-  text   String
+  text   String @unique
   author String
   bookId String
   book   Book   @relation(fields: [bookId], references: [id])
 }
 
 model Account {
-  id                String  @id
+  id             String    @id @default(cuid())
   userId            String
   type              String
   provider          String
