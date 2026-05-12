@@ -1,19 +1,122 @@
-/* src/app/globals.css */
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --color-sage-light: #DAD7CD;
+  --color-sage: #A3B18A;
+  --color-sage-dark: #588157;
+  --color-forest: #344E41;
+  --color-cream: #F2E8CF;
+  --color-terracotta: #BC6C25;
+  --color-earth: #5B3924;
+  --color-coffee: #6F4E37;
 
+  --font-header: "Playfair Display", serif;
+  --font-quote: "Lora", serif;
+  --font-ui: "Inter", sans-serif;
+}
 
-/* Checker background with overall layout spacing */
-body.bg-checker {
-  background-image: 
-    linear-gradient(to right, #d6f0ff 1px, transparent 1px),
-    linear-gradient(to bottom, #d6f0ff 1px, transparent 1px);
-  background-size: 40px 40px;
-  padding: 2rem; /* Adds spacing around the entire app */
-  color: #5B3924; /* Coffee brown text */
-  font-family: 'Inter', sans-serif;
-  min-height: 100vh;
-  box-sizing: border-box;
+@layer base {
+  body {
+    background-color: #F2E8CF;
+    background-image: 
+      linear-gradient(rgba(91, 57, 36, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(91, 57, 36, 0.03) 1px, transparent 1px),
+      linear-gradient(rgba(173, 216, 230, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(173, 216, 230, 0.05) 1px, transparent 1px);
+    background-position: 0 0, 0 0, 2px 2px, 2px 2px;
+    background-size: 40px 40px;
+    color: #5B3924;
+    font-family: var(--font-ui);
+    min-height: 100vh;
+    margin: 0;
+    background-attachment: fixed;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size: 24px'><text y='20'>🖋️</text></svg>"), auto;
+  }
+
+  a, button, [role="button"], .cursor-pointer {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size: 24px'><text y='20'>✨</text></svg>"), pointer;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-header);
+    font-weight: 700;
+  }
+
+  p, span, div {
+    font-family: var(--font-ui);
+  }
+
+  blockquote, .quote-text {
+    font-family: var(--font-quote);
+  }
+}
+
+@utility cottage-card {
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(218, 215, 205, 0.3);
+  border-radius: 1rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+  &:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@utility cottage-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  border-radius: 1rem; /* Soft curved edges */
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  &:active {
+    transform: translateY(2px) scale(0.98);
+    box-shadow: none !important;
+  }
+}
+
+@utility cottage-btn-primary {
+  background-color: #A3B18A;
+  color: white;
+  box-shadow: 0 4px 0 0 #588157; /* 3D effect base */
+  &:hover {
+    background-color: #588157;
+    transform: translateY(-1px);
+  }
+  &:active {
+    box-shadow: 0 0 0 0 #588157 !important;
+  }
+}
+
+@utility cottage-btn-secondary {
+  border: 2px solid #A3B18A;
+  color: #A3B18A;
+  background-color: rgba(255, 255, 255, 0.3);
+  &:hover {
+    background-color: #A3B18A;
+    color: white;
+  }
+}
+
+/* Pixie Sparkle Animation */
+@keyframes sparkle-burst {
+  0% { transform: scale(0); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.sparkle-effect {
+  position: absolute;
+  pointer-events: none;
+  background: radial-gradient(circle, #FFF 10%, transparent 70%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: sparkle-burst 0.6s ease-out forwards;
 }

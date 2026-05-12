@@ -1,31 +1,46 @@
-'use client';
-
 import React from 'react';
 
 export default function AboutPage() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-12 text-[#7c4f2c] font-serif text-lg space-y-10 text-center">
-      <section>
-        <h1 className="text-3xl font-bold mb-4">A Tale from the Café Library</h1>
-        <p className="leading-relaxed">
-          Once in the quiet village of Thistlebrook, where clouds danced lazily and time moved like honey, there lived a soft spoken girl named Serene. Her world was made of poems and pages, tucked between the shelves of a little coffeehouse library she called home. Serene never chased grand adventures; she whispered to them in the margins of books, hoping they would hear.
-          <br /><br />
-          One rainy afternoon, as mist curled around the windows, a stranger stepped in. He was not a knight, nor a prince, but a boy with stories in his eyes and hands that smelled of parchment and ink. His name was Darien. He did not promise castles or stars, only silence shared between sips of warm espresso and soft gasps at plot twists.
-          <br /><br />
-          Over cups of cinnamon coffee and pages worn soft by love, they discovered not just books but each other. In the warmth of that quiet space, Serene's heart learned that magic does not always roar. Sometimes, it just reads beside you.
-        </p>
+    <div className="max-w-4xl mx-auto px-6 py-12 text-earth font-sans space-y-12">
+      {/* Hero Section */}
+      <section className="text-center space-y-4">
+        <h1 className="text-5xl md:text-6xl font-bold text-forest leading-tight font-header">
+          A Tale from the <span className="text-terracotta italic">Café Library</span>
+        </h1>
+        <p className="text-earth/60 italic font-serif text-xl">Where magic is found between the pages and sips of coffee.</p>
       </section>
 
-      <section className="mt-12 border-t border-[#bfa58c] pt-8 text-center">
-        <h2 className="text-2xl font-bold mb-4">What is BookWise?</h2>
-        <p className="leading-relaxed max-w-2xl mx-auto text-[#7c4f2c]">
-          BookWise is your cozy book companion, a café inspired web app that curates reads based on how you <em>feel</em>.
-          Whether you are looking to escape into fantasy, sink into soft romance, or learn from non fiction, BookWise guides
-          you gently. With mood based prompts, category filtering, and aesthetic design, it is like asking your favorite
-          barista what book you need today.
-          <br /><br />
-          Welcome to your literary retreat. Built with heart by <strong>Sneha</strong>.
+      {/* Story Section */}
+      <section className="cottage-card p-8 md:p-12 space-y-6 relative overflow-hidden bg-white/40 border-sage/10">
+        <div className="space-y-6 text-lg leading-relaxed font-quote quote-text text-center max-w-2xl mx-auto">
+          <p>
+            In our quiet Café Library, amidst the steam of hazelnut lattes and the rustle of turning pages, lived a boy named <span className="text-forest font-bold">Kaju</span> and a girl named <span className="text-terracotta font-bold">Tinguu</span>.
+          </p>
+          
+          <p>
+            Tinguu, who had secretly loved Kaju for years, finally handed him her most precious treasure, a worn copy of <span className="italic font-bold">Harry Potter</span>. "Read it," she whispered 
+          </p>
+
+          <p>
+            As Kaju lost himself in the wizarding world, he realized that the real magic wasn't in the spells it was in the way Tinguu looked at him when he finally understood the power of a good story. In that moment, surrounded by the warmth of the café, he fell deeply in love.
+          </p>
+
+          <p className="text-xl italic text-forest border-y border-sage/20 py-4">
+            Magic doesn't always roar; sometimes it just reads beside you.
+          </p>
+        </div>
+      </section>
+
+      {/* Mission Section */}
+      <section className="text-center space-y-6 max-w-xl mx-auto pt-4">
+        <h2 className="text-2xl font-bold text-forest font-header">Welcome to BookWise</h2>
+        <p className="text-earth/80 leading-relaxed">
+          Inspired by this simple, quiet magic, BookWise is your digital corner to find books that match your soul. Whether you're a Kaju or a Tinguu, we're here to help you find your next great read.
         </p>
+        <div className="pt-4 border-t border-sage/10">
+          <p className="font-bold text-forest">Built with magic by Sneha ✨</p>
+        </div>
       </section>
     </div>
   );

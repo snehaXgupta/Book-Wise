@@ -14,16 +14,17 @@ model Genre {
 }
 
 model Book {
-  id          String  @id @default(cuid())
-  title       String @unique 
+  id          String   @id @default(cuid())
+  title       String   @unique
   author      String
   description String
   coverUrl    String?
   rating      Float?
   genreId     String
-  readCount   Int     @default(0)
-  genre       Genre   @relation(fields: [genreId], references: [id])
+  readCount   Int      @default(0)
+  genre       Genre    @relation(fields: [genreId], references: [id])
   quotes      Quote[]
+  reviews     Review[]
 }
 
 model Quote {
@@ -35,7 +36,7 @@ model Quote {
 }
 
 model Account {
-  id             String    @id @default(cuid())
+  id                String  @id @default(cuid())
   userId            String
   type              String
   provider          String
@@ -61,7 +62,7 @@ model Session {
 }
 
 model User {
-  id             String    @id @default(cuid()) // ✅ Important
+  id             String    @id @default(cuid())
   name           String?
   email          String?   @unique
   emailVerified  DateTime?
@@ -69,6 +70,18 @@ model User {
   hashedPassword String?
   Account        Account[]
   Session        Session[]
+  reviews        Review[]
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  content   String
+  rating    Int
+  userId    String
+  bookId    String
+  user      User     @relation(fields: [userId], references: [id])
+  book      Book     @relation(fields: [bookId], references: [id])
+  createdAt DateTime @default(now())
 }
 
 model VerificationToken {
