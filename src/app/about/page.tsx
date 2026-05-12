@@ -12,7 +12,7 @@ export default function AboutPage() {
           <br /><br />
           One rainy afternoon, as mist curled around the windows, a stranger stepped in. He was not a knight, nor a prince, but a boy with stories in his eyes and hands that smelled of parchment and ink. His name was Darien. He did not promise castles or stars, only silence shared between sips of warm espresso and soft gasps at plot twists.
           <br /><br />
-          Over cups of cinnamon coffee and pages worn soft by love, they discovered not just books but each other. In the warmth of that quiet space, Serenes heart learned that magic doesn’t always roar. Sometimes, it just reads beside you.
+          Over cups of cinnamon coffee and pages worn soft by love, they discovered not just books but each other. In the warmth of that quiet space, Serene's heart learned that magic does not always roar. Sometimes, it just reads beside you.
         </p>
       </section>
 
